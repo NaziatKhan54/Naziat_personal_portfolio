@@ -1,0 +1,616 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 0;
+    margin: 0;
+    background-color: #FFFDD0;
+    position: relative;
+    font-family: 'Outfit', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Background containment fix */
+.background-ellipses-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+    pointer-events: none;
+    /* Allows text selection through the background elements */
+}
+
+.background-ellipses {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    /* Forces exact heights for stacking */
+}
+
+/* Ellipses styles */
+.ellipse1,
+.ellipse2,
+.ellipse3,
+.ellipse4,
+.ellipse5,
+.ellipse6 {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.ellipse1 {
+    left: -100px;
+    top: -38px;
+    background-color: #F7A8C4;
+    width: 783px;
+    height: 300px;
+    filter: blur(50px);
+}
+
+.ellipse2 {
+    left: 696px;
+    top: 0px;
+    background-color: #A04BE5;
+    width: 659px;
+    height: 253px;
+    filter: blur(120px);
+}
+
+.ellipse3 {
+    left: 35px;
+    top: 150px;
+    background-color: #FFFFFF;
+    width: 578px;
+    height: 300px;
+    filter: blur(50px);
+}
+
+.ellipse4 {
+    left: 832px;
+    top: 372px;
+    background-color: #F7A8C4;
+    width: 902px;
+    height: 397px;
+    filter: blur(50px);
+}
+
+.ellipse5 {
+    left: -172px;
+    top: 556px;
+    background-color: #D58FDD;
+    width: 684px;
+    height: 367px;
+    filter: blur(110px);
+}
+
+.ellipse6 {
+    left: 593px;
+    top: 685px;
+    background-color: #FFE6A7;
+    width: 902px;
+    height: 397px;
+    filter: blur(50px);
+}
+
+/* Structural Content Container */
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+}
+
+.navbar {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #000000;
+    font-weight: 3000;
+    /* Fixed standard text value maximum */
+    padding: 8px 20px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.nav-item:not(.active):hover {
+    background: linear-gradient(135deg, rgba(160, 75, 229, 0.9), rgba(255, 45, 141, 0.9));
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.nav-item.active {
+    position: relative;
+    border-color: rgba(255, 255, 255, 0.6);
+    color: #000000;
+}
+
+.nav-item.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 2px;
+    background: linear-gradient(90deg, #A04BE5, #D946EF, #FF2D8D, #00FFE6, #A04BE5);
+    background-size: 300% 300%;
+    animation: gradientMove 2.5s linear infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 300% 50%;
+    }
+}
+
+.hero-section {
+    width: 100%;
+    margin-bottom: 35px;
+    position: relative;
+}
+
+.section-badge-top {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.underline {
+    position: absolute;
+    left: -20px;
+    top: 25px;
+    width: 180px;
+    transform: rotate(-6deg);
+}
+
+.main-heading {
+    font-size: 2.7rem;
+    font-weight: 800;
+    line-height: 1.3;
+    margin-bottom: 25px;
+    color: #111;
+}
+
+.text-purple {
+    color: #8A4FFF;
+}
+
+.text-pink {
+    color: #FF4A8B;
+}
+
+.intro-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    font-weight: 700;
+}
+
+.font-purple {
+    color: #7B3FE4;
+}
+
+.font-pink {
+    color: #E03B77;
+}
+
+.font-blue {
+    color: #3B56E4;
+}
+
+.stats-panel {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 25px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border-radius: 8px;
+    padding: 10px 0;
+}
+
+.stat-card:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+}
+
+.stat-card:hover .stat-icon img {
+    transform: scale(1.15);
+    color: #FECF6A;
+}
+
+.stat-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 1px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon img {
+    width: 62px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 12px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.stat-number {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: #555;
+}
+
+/* Education Section Layout Updates */
+.education-section {
+    padding: 50px 0;
+    width: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+
+.section-title h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111;
+    margin: 0;
+}
+
+.section-title img {
+    width: 300px;
+    margin-top: -10px;
+}
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+}
+
+.edu-card {
+    position: relative;
+    background: rgba(255, 255, 255, .68);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 24px;
+    padding: 34px 32px 34px 56px;
+    transition: .35s;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .05);
+}
+
+.edu-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(160, 75, 229, .15);
+}
+
+.edu-year {
+    position: absolute;
+    top: 20px;
+    left: 75px;
+}
+
+.edu-year span {
+    display: inline-block;
+    padding: 4px 18px;
+    border-radius: 30px;
+    background: #F9C7DB;
+    font-size: .95rem;
+    font-weight: 700;
+    color: #222;
+}
+
+.edu-icon {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #CFF7F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graduationCap {
+    width: 30px;
+}
+
+.timeline {
+    position: absolute;
+    top: 68px;
+    left: 38px;
+    width: 2px;
+    height: 190px;
+    background: #BB67FF;
+}
+
+.edu-content {
+    margin-top: 40px;
+}
+
+.edu-content h3 {
+    font-size: 2rem;
+    color: #2B468D;
+    line-height: 1.25;
+    margin-bottom: 22px;
+    font-weight: 700;
+}
+
+.edu-content p {
+    font-size: 1.35rem;
+    color: #653C9E;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+@media(max-width:900px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-panel {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-card:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* =========================
+      SKILLS SECTION
+========================= */
+
+.skills-section {
+    padding: 10px 4%;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+}
+
+/* =========================
+      CARD
+========================= */
+
+.skill-card {
+
+    position: relative;
+
+    background: rgba(255, 255, 255, .68);
+
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, .6);
+
+    border-radius: 22px;
+
+    padding: 45px 35px 40px 60px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+
+    transition: .35s;
+
+}
+
+.skill-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 0 25px rgba(160, 75, 229, .18),
+        0 0 45px rgba(255, 45, 141, .10),
+        0 20px 50px rgba(0, 0, 0, .08);
+
+}
+
+/* =========================
+        ICON
+========================= */
+
+.skill-icon {
+
+    position: absolute;
+
+    top: 14px;
+
+    left: 14px;
+
+    width: 46px;
+
+    height: 46px;
+
+    border-radius: 50%;
+
+    background: #FCE7C2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.laptop {
+
+    width: 35px;
+
+}
+
+/* =========================
+      TIMELINE
+========================= */
+
+.timeline2 {
+
+    position: absolute;
+
+    top: 58px;
+
+    left: 36px;
+
+    width: 2px;
+
+    height: 400px;
+
+
+    background: #BB67FF;
+
+
+}
+
+/* =========================
+     CONTENT
+========================= */
+
+.skill-group {
+    position: relative;
+    margin-bottom: 42px;
+    padding-left: 28px;
+    transition: transform 0.3s ease;
+}
+
+.skill-group:last-child {
+    margin-bottom: 0;
+}
+
+/* Custom Bullet */
+
+.skill-group::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #214F87;
+
+    transition:
+        background-color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+/* Hover Animation */
+
+.skill-group:hover::before {
+    background: #FECF6A;
+    transform: scale(1.35);
+
+    box-shadow:
+        0 0 10px #FECF6A,
+        0 0 20px rgba(254, 207, 106, .6);
+}
+
+.skill-group:hover {
+    transform: translateX(8px);
+}
+
+.skill-group h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #284C8D;
+    margin-bottom: 12px;
+    transition: color .3s ease;
+}
+
+.skill-group:hover h3 {
+    color: #A04BE5;
+}
+
+.skill-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.skill-group li {
+    font-size: 1.55rem;
+    color: #6B3FA4;
+    line-height: 1.5;
+    transition: color .3s ease;
+}
+
+.skill-group:hover li {
+    color: #8A4FFF;
+}
+
+@media(max-width:900px) {
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .timeline {
+
+        height: 250px;
+
+    }
+
+    .skill-group h3 {
+
+        font-size: 1.5rem;
+
+    }
+
+    .skill-group li {
+
+        font-size: 1.15rem;
+
+    }
+
+}
