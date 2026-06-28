@@ -9,7 +9,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Background containment fix */
+
 .background-ellipses-container {
     display: flex;
     flex-direction: column;
@@ -19,17 +19,17 @@ body {
     width: 100%;
     z-index: -1;
     pointer-events: none;
-    /* Allows text selection through the background elements */
+
 }
 
 .background-ellipses {
     position: relative;
     width: 100%;
     height: 1100px;
-    /* Forces exact heights for stacking */
+
 }
 
-/* Ellipses styles */
+
 .ellipse1,
 .ellipse2,
 .ellipse3,
@@ -94,7 +94,7 @@ body {
     filter: blur(50px);
 }
 
-/* Structural Content Container */
+
 .container {
     max-width: 1440px;
     margin: 0 auto;
@@ -284,7 +284,7 @@ body {
     color: #555;
 }
 
-/* Education Section Layout Updates */
+
 .education-section {
     padding: 50px 0;
     width: 100%;
@@ -406,9 +406,6 @@ body {
     }
 }
 
-/* =========================
-      SKILLS SECTION
-========================= */
 
 .skills-section {
     padding: 10px 4%;
@@ -420,9 +417,7 @@ body {
     gap: 70px;
 }
 
-/* =========================
-      CARD
-========================= */
+
 
 .skill-card {
 
@@ -455,30 +450,19 @@ body {
 
 }
 
-/* =========================
-        ICON
-========================= */
+
 
 .skill-icon {
 
     position: absolute;
-
     top: 14px;
-
     left: 14px;
-
     width: 46px;
-
     height: 46px;
-
     border-radius: 50%;
-
     background: #FCE7C2;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
 
 }
@@ -489,9 +473,6 @@ body {
 
 }
 
-/* =========================
-      TIMELINE
-========================= */
 
 .timeline2 {
 
@@ -511,10 +492,6 @@ body {
 
 }
 
-/* =========================
-     CONTENT
-========================= */
-
 .skill-group {
     position: relative;
     margin-bottom: 42px;
@@ -526,7 +503,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Custom Bullet */
+
 
 .skill-group::before {
     content: "";
@@ -544,7 +521,7 @@ body {
         box-shadow .3s ease;
 }
 
-/* Hover Animation */
+
 
 .skill-group:hover::before {
     background: #FECF6A;

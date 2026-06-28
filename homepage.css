@@ -149,7 +149,7 @@ body {
             #A04BE5);
 
     background-size: 300% 300%;
-    animation: gradientMove 2.5s linear infinite;
+    animation: gradientMove 1.5s linear infinite;
 
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
@@ -255,7 +255,7 @@ body {
     cursor: pointer;
     overflow: hidden;
 
-    /* Glassmorphism */
+
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -265,7 +265,7 @@ body {
     z-index: 1;
 }
 
-/* Animated Gradient Border */
+
 .btn::before {
     content: "";
     position: absolute;
@@ -294,7 +294,7 @@ body {
     transition: opacity 0.4s ease;
 }
 
-/* Hover Effect */
+
 .btn:hover {
     transform: translateY(-4px);
 
@@ -313,7 +313,7 @@ body {
     animation: none;
 }
 
-/* Fill on Hover */
+
 .btn:hover::after {
     opacity: 1;
 }
@@ -331,7 +331,7 @@ body {
     z-index: -2;
 }
 
-/* Gradient Animation */
+
 @keyframes gradientMove {
     0% {
         background-position: 0% 50%;
@@ -342,7 +342,7 @@ body {
     }
 }
 
-/* Social Media Connect */
+
 .connect-section {
     display: flex;
     flex-direction: column;
@@ -406,11 +406,8 @@ body {
 
 .image-frame-wrapper {
     margin-left: 258px;
-    /* Pushes the image 50px to the right */
     margin-top: -5px;
-    /* Pulls the image 20px upwards */
     margin-bottom: 30px;
-    /* Pushes content below it 30px down */
 
 
 }
