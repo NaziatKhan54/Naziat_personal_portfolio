@@ -83,15 +83,6 @@ body {
 }
 
 
-.cyan-sqaure-design {
-    position: absolute;
-    left: 700px;
-    top: -183px;
-    width: 580px;
-    height: 780px;
-    transform: rotate(-3deg);
-}
-
 .navbar {
     display: flex;
     gap: 15px;
@@ -346,16 +337,19 @@ body {
 .connect-section {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 12px;
 }
 
 .connect-title {
+    margin-top: 25px;
     font-size: 1rem;
-    font-weight: 600;
-    color: #3f3f46;
+    font-weight: 700;
+    color: #000000;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 20px;
+
 }
 
 .connect-title svg {
@@ -404,10 +398,18 @@ body {
 
 }
 
+.right-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+
 .image-frame-wrapper {
-    margin-left: 258px;
+    /*margin-left: 258px;
     margin-top: -5px;
-    margin-bottom: 30px;
+    margin-bottom: 30px;*/
+    position: relative;
 
 
 }
