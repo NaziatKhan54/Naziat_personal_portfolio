@@ -281,3 +281,139 @@ body {
 
     font-weight: 700;
 }
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.hamburger {
+    display: none;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 1.4rem;
+    color: #111;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 6%;
+        padding-right: 6%;
+        margin-top: 80px;
+    }
+
+    .navbar {
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        width: 220px;
+        background: rgba(255, 253, 208, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 15px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        gap: 10px;
+        align-items: stretch;
+        z-index: 99;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: fadeInDown 0.3s ease forwards;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .section-tag {
+        font-size: 38px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .section-tag {
+        font-size: 32px;
+    }
+
+    .achievement-card {
+        padding: 18px;
+        gap: 14px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .section-tag {
+        font-size: 28px;
+    }
+
+    .achievement-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .card-details {
+        padding-right: 0;
+    }
+
+    .card-title {
+        font-size: 19px;
+    }
+
+    .card-subtitle {
+        font-size: 16px;
+    }
+
+    .card-text {
+        font-size: 14px;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

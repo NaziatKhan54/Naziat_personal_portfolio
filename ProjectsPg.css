@@ -351,15 +351,133 @@ body {
     color: #d9965b;
 }
 
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
 
-@media (max-width: 900px) {
+.hamburger {
+    display: none;
+    /* Hidden by default on large screens */
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 1.4rem;
+    color: #111;
+    padding: 8px 14px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 6%;
+        margin-top: 80px;
+    }
+
+    .navbar {
+        justify-content: flex-end;
+        position: relative;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: auto;
+        width: 220px;
+        background: rgba(255, 253, 208, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 15px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        gap: 10px;
+        align-items: stretch;
+        z-index: 99;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        animation: fadeInDown 0.3s ease forwards;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
     .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
+        column-gap: 40px;
+        row-gap: 30px;
+    }
+
+    .section-tag {
+        font-size: 38px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .container {
+        padding: 0 5%;
+    }
+
+    .section-tag {
+        font-size: 32px;
+    }
+
+    .about-description {
+        font-size: 17px;
+        text-align: left;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .section-tag {
+        font-size: 28px;
+    }
+
+    .project-title {
+        font-size: 22px;
+    }
+
+    .project-description {
+        font-size: 15px;
+        text-align: left;
+    }
+
+    .project-image-container {
+        height: 200px;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

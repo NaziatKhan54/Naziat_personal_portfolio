@@ -39,11 +39,16 @@
     </div>
     <div class="container">
         <nav class="navbar">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="Aboutme.html" class="nav-item">About</a>
-            <a href="ProjectsPg.html" class="nav-item active">Projects</a>
-            <a href="Achievements.html" class="nav-item">Achievements</a>
-            <a href="Contactme.html" class="nav-item">Contact</a>
+            <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="nav-menu" id="nav-menu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="Aboutme.html" class="nav-item">About</a>
+                <a href="ProjectsPg.html" class="nav-item active">Projects</a>
+                <a href="Achievements.html" class="nav-item">Achievements</a>
+                <a href="Contactme.html" class="nav-item">Contact</a>
+            </div>
         </nav>
         <main class="container">
             <section class="projects-section">
@@ -189,6 +194,21 @@
             </section>
         </main>
     </div>
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const hamburgerIcon = hamburgerBtn.querySelector('i');
+        hamburgerBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if (navMenu.classList.contains('active')) {
+                hamburgerIcon.classList.remove('fa-bars');
+                hamburgerIcon.classList.add('fa-xmark');
+            } else {
+                hamburgerIcon.classList.remove('fa-xmark');
+                hamburgerIcon.classList.add('fa-bars');
+            }
+        });
+    </script>
 </body>
 
 </html>
