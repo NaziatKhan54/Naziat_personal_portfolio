@@ -6,7 +6,6 @@ body {
     background-color: #FFFDD0;
     position: relative;
     font-family: 'Outfit', sans-serif;
-    overflow-x: hidden;
 }
 
 
@@ -19,7 +18,7 @@ body {
     width: 100%;
     z-index: -1;
     pointer-events: none;
-
+    overflow-x: hidden;
 }
 
 .background-ellipses {
@@ -305,10 +304,25 @@ body {
 }
 
 @media (max-width: 1024px) {
+
+    body {
+        overflow-y: auto;
+    }
+
+    .ellipse1,
+    .ellipse2,
+    .ellipse3,
+    .ellipse4,
+    .ellipse5,
+    .ellipse6 {
+        width: 100%;
+        height: 200px;
+        filter: blur(80px);
+    }
+
     .container {
         padding-left: 6%;
         padding-right: 6%;
-        margin-top: 80px;
     }
 
     .navbar {
@@ -358,6 +372,12 @@ body {
 
     .section-tag {
         font-size: 38px;
+    }
+
+    .underline {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 180px;
     }
 }
 
