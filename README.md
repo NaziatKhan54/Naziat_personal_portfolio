@@ -1,10 +1,10 @@
-# 🌸 Personal Portfolio Website
+#  Personal Portfolio Website
 
 A modern, responsive personal portfolio website developed using **HTML5**, **CSS3**, and **JavaScript**. The website showcases my education, technical skills, projects, achievements, and contact information through a clean pastel-themed user interface inspired by modern web design principles.
 
 ---
 
-## 📌 Live Demo
+##  Live Demo
 
 **Website:** https://naziatkhan54.github.io/Naziat_personal_portfolio/
 
@@ -70,7 +70,7 @@ Personal Portfolio
 
 ---
 
-## 🚀 How to Run the Project Locally
+##  How to Run the Project Locally
 
 ### Step 1
 Clone the repository.
